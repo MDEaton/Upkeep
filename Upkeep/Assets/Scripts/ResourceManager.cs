@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ResourceManager : MonoBehaviour {
 
-    public Text GoldField, LumberField;
+    public Text GoldField, LumberField, FoodField;
 
     private static ResourceManager _instance;
     public static ResourceManager Instance
@@ -19,6 +19,10 @@ public class ResourceManager : MonoBehaviour {
         }
     }
 
+    void Awake()
+    {
+    }
+
     public void UpdateGold (int CurrentGold)
     {
         GoldField.text = CurrentGold.ToString();
@@ -27,5 +31,10 @@ public class ResourceManager : MonoBehaviour {
     public void UpdateLumber(int CurrentLumber)
     {
         LumberField.text = CurrentLumber.ToString();
+    }
+
+    public void UpdateFood(int CurrentFood)
+    {
+        FoodField.text = CurrentFood.ToString();
     }
 }

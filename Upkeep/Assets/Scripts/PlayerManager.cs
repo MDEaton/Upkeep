@@ -21,6 +21,18 @@ public class PlayerManager : MonoBehaviour {
         }
     }
 
+    void Awake ()
+    {
+        UpdateResources();
+    }
+
+    private void UpdateResources ()
+    {
+        ResourceManager.Instance.UpdateGold(PlayerGold);
+        ResourceManager.Instance.UpdateLumber(PlayerLumber);
+        ResourceManager.Instance.UpdateFood(PlayerFood);
+    }
+
     public void ChangeGold (int Amount)
     {
         PlayerGold += Amount;
@@ -36,6 +48,6 @@ public class PlayerManager : MonoBehaviour {
     public void ChangeFood(int Amount)
     {
         PlayerFood += Amount;
-        ResourceManager.Instance.UpdateGold(PlayerFood);
+        ResourceManager.Instance.UpdateFood(PlayerFood);
     }
 }
