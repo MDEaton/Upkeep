@@ -7,6 +7,8 @@ public class ResourceManager : MonoBehaviour {
 
     public Text GoldField, LumberField, FoodField;
 
+    public enum ResourceType { gold = 0, lumber, food, crystals };
+
     private static ResourceManager _instance;
     public static ResourceManager Instance
     {

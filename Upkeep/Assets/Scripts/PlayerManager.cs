@@ -33,21 +33,79 @@ public class PlayerManager : MonoBehaviour {
         ResourceManager.Instance.UpdateFood(PlayerFood);
     }
 
-    public void ChangeGold (int Amount)
+    public void IncreaseResource (ResourceManager.ResourceType ResourceToUpdate, int Amount)
     {
-        PlayerGold += Amount;
-        ResourceManager.Instance.UpdateGold(PlayerGold);
+        if( ResourceToUpdate == ResourceManager.ResourceType.gold )
+        {
+            PlayerGold += Amount;
+            ResourceManager.Instance.UpdateGold(PlayerGold);
+        }
+        else if(ResourceToUpdate == ResourceManager.ResourceType.lumber)
+        {
+            PlayerLumber += Amount;
+            ResourceManager.Instance.UpdateLumber(PlayerLumber);
+        }
+        else if (ResourceToUpdate == ResourceManager.ResourceType.food)
+        {
+            PlayerFood += Amount;
+            ResourceManager.Instance.UpdateLumber(PlayerFood);
+        }
     }
 
-    public void ChangeLumber(int Amount)
+    /*public void IncreaseResource (ResourceManager.ResourceType ResourceToUpdate)
     {
-        PlayerLumber += Amount;
-        ResourceManager.Instance.UpdateGold(PlayerLumber);
+        if (ResourceToUpdate == ResourceManager.ResourceType.gold)
+        {
+            PlayerGold++;
+            ResourceManager.Instance.UpdateGold(PlayerGold);
+        }
+        else if (ResourceToUpdate == ResourceManager.ResourceType.lumber)
+        {
+            PlayerLumber++;
+            ResourceManager.Instance.UpdateLumber(PlayerLumber);
+        }
+        else if (ResourceToUpdate == ResourceManager.ResourceType.food)
+        {
+            PlayerFood++;
+            ResourceManager.Instance.UpdateLumber(PlayerFood);
+        }
+    }*/
+
+    public void DecreaseResource(ResourceManager.ResourceType ResourceToUpdate, int Amount)
+    {
+        if (ResourceToUpdate == ResourceManager.ResourceType.gold)
+        {
+            PlayerGold -= Amount;
+            ResourceManager.Instance.UpdateGold(PlayerGold);
+        }
+        else if (ResourceToUpdate == ResourceManager.ResourceType.lumber)
+        {
+            PlayerLumber -= Amount;
+            ResourceManager.Instance.UpdateLumber(PlayerLumber);
+        }
+        else if (ResourceToUpdate == ResourceManager.ResourceType.food)
+        {
+            PlayerFood -= Amount;
+            ResourceManager.Instance.UpdateLumber(PlayerFood);
+        }
     }
 
-    public void ChangeFood(int Amount)
+    /*public void DecreaseResource(ResourceManager.ResourceType ResourceToUpdate)
     {
-        PlayerFood += Amount;
-        ResourceManager.Instance.UpdateFood(PlayerFood);
-    }
+        if (ResourceToUpdate == ResourceManager.ResourceType.gold)
+        {
+            PlayerGold--;
+            ResourceManager.Instance.UpdateGold(PlayerGold);
+        }
+        else if (ResourceToUpdate == ResourceManager.ResourceType.lumber)
+        {
+            PlayerLumber--;
+            ResourceManager.Instance.UpdateLumber(PlayerLumber);
+        }
+        else if (ResourceToUpdate == ResourceManager.ResourceType.food)
+        {
+            PlayerFood--;
+            ResourceManager.Instance.UpdateLumber(PlayerFood);
+        }
+    }*/
 }

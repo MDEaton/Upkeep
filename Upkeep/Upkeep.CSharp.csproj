@@ -219,10 +219,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\BaseMechanic.cs" />
     <Compile Include="Assets\Scripts\GoldMineManager.cs" />
+    <Compile Include="Assets\Scripts\ObjectLock.cs" />
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\ResourceManager.cs" />
+    <Compile Include="Assets\Scripts\ResourceMechanic.cs" />
     <Compile Include="Assets\Scripts\ScreenManager.cs" />
+    <Compile Include="Assets\Scripts\UnlocksManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
