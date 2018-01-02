@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class GoldMineManager : MonoBehaviour {
 
-    float _ClickCooldown = 10f;
+    float _ClickCooldown = 0f;
     float ClickTimer = 0f;
 
-    int GoldRewardAmount = 5;
+    int GoldRewardAmount = 1;
     int GoldMineLevel = 1;
 
 	// Use this for initialization
@@ -26,10 +26,11 @@ public class GoldMineManager : MonoBehaviour {
 
     public void OnGoldClick ()
     {
+        Debug.Log("Click Gold Mine");
         if( ClickTimer <= 0f)
         {
             int GoldEarned = GoldRewardAmount * GoldMineLevel;
-            PlayerManager.Instance.ChangeGold(GoldEarned);
+            PlayerManager.Instance.IncreaseResource(ResourceManager.ResourceType.gold, GoldEarned);
             ClickTimer = _ClickCooldown;
         }
     }
